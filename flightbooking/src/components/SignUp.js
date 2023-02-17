@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Component } from "react";
+import '../App.css';
 
 export default class SignUp extends Component {
     constructor() {
@@ -95,9 +96,9 @@ export default class SignUp extends Component {
 
         return formValid; 
     }
-    async postUser(person){
+    async postUser(user){
         try {
-            const response = axios.post("http://localhost:8585/person/add", person);
+            const response = axios.post("http://localhost:8585/user/add", user);
             const data = (await response).data;
             console.log('API success');
             console.log(data);

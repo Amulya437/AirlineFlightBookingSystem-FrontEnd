@@ -32,10 +32,33 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-.Image{
-  
+
+.Image {}
+
+.body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  height: 100vh;
+}
+
+#signup .container #signup-row #signup-column #signup-box {
+  margin-top: auto;
+  max-width: auto;
+  height: auto;
+  border: 1px solid #9C9C9C;
+  background-color: white;
+}
+
+#signup .container #signup-row #signup-column #signup-box #signup-form {
+  padding: 20px;
+}
+
+#signup .container #signup-row #signup-column #signup-box #signup-form #register-link {
+  margin-top: -85px;
 }

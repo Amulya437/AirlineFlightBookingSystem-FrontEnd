@@ -5,15 +5,15 @@ import { Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import {store} from "./store";
 
-
+import SignUp from "./components/SignUp";
 import Airline from "./components/Airline.js";
 import "./components/app.css";
 import Flight from "./components/Flight";
 import Executive from "./components/Executive";
+
+import User from "./components/User";
+import { Login } from "./components/auth/login";
 import Flyer from "./components/Flyer";
-
-
-
 
 export default class App extends Component {
   render(){ 
@@ -23,11 +23,14 @@ export default class App extends Component {
       <NavBar/>
       <Routes>
 
-       
+        
+        <Route path="/" element={ <Login />} /> 
         <Route path="/airline" element={ <Airline/>} />
+        <Route path="/flyer" element={ <Flyer/>} />
         <Route path="/flight" element={ <Flight/>} /> 
-        <Route path="/flyer" element={ <Flyer/>} /> 
         <Route path="/executive" element={ <Executive/>} /> 
+        <Route path="/user" element={ <User />} /> 
+        <Route path="/sign-up" element={ <SignUp />} /> 
         
         </Routes>
         </Provider>

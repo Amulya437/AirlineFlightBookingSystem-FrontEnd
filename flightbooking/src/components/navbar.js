@@ -48,12 +48,12 @@ export default class NavBar extends Component {
                                             Executive
                                         </Link>
                                     </li>
-                                    
                                     <li className="nav-item">
-                                        <Link className="nav-link" aria-current="page" to="/login">
-                                        <button type="button" className="btn btn-primary">Login</button>
+                                        <Link className="nav-link" aria-current="page" to="/user">
+                                            User
                                         </Link>
                                     </li>
+                                    
                                     <li className="nav-item">
                                         <Link className="nav-link" aria-current="page" to="/sign-up">
                                         <button type="button" className="btn btn-primary">SignUp</button>

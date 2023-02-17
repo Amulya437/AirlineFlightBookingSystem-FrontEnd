@@ -11,7 +11,9 @@ export class Airline extends Component {
         };
     }
     componentDidMount() {
+
         //this.props.AirlineList();     
+
     }
     render() {
         return (

@@ -15,8 +15,8 @@ export class AddAirline extends Component {
         };
     }
     componentDidMount() {
-        //fetch all airline: call action        
-        //this.props.listAirline();    
+        //fetch all airline: call action        
+        //this.props.listAirline();    
     }
     render() {
         return (
@@ -74,12 +74,12 @@ export class AddAirline extends Component {
         let tempErrors = {}
         let formValid = true;
         if (!code) {
-            //If name is not given        
+            //If name is not given        
             formValid = false;
             tempErrors['code'] = 'Airline code cannot be empty';
         }
         if (!name) {
-            //If name is not given        
+            //If name is not given        
             formValid = false;
             tempErrors['name'] = 'Airline Name cannot be empty';
         }
@@ -98,7 +98,7 @@ export class AddAirline extends Component {
             console.log('API success');
             console.log(data);
             this.setState({
-                msg: "Airline added"
+                msg: 'Airline added'
             })
             this.props.AddAirline(data);
         } catch (error) {

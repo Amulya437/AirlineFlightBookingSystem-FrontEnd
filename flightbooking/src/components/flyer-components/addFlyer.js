@@ -2,7 +2,6 @@ import axios from "axios";
 import { Component } from "react";
 import { connect } from "react-redux";
 import { addFlyer } from "../../store/action/flyer";
-import Flyer from "../Flyer";
 export class AddFlyer extends Component{
 
     constructor(props){

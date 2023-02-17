@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import Flyer from "../Flyer";
 import { listFlyer }  from "../../store/action/flyer";
 
 

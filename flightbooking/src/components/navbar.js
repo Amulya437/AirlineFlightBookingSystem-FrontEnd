@@ -39,6 +39,11 @@ export default class NavBar extends Component {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
+                                        <Link className="nav-link" aria-current="page" to="/flyer">
+                                            Flyer
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
                                         <Link className="nav-link" aria-current="page" to="/executive">
                                             Executive
                                         </Link>

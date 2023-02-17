@@ -174,7 +174,7 @@ export class AddFlyer extends Component{
         }       
     }
     try {
-        const response = axios.post("http://localhost:8585/api/flyer/add/",fly);
+        const response = axios.post("http://localhost:8585/api/flyer/add",fly);
         const data = (await response).data;
         console.log('API success');
         console.log(data);
@@ -182,11 +182,11 @@ export class AddFlyer extends Component{
             msg: "Flyer Registered"
         })
         this.props.addFlyer(data);
-      } catch (error) {
-        this.setState({
-            msg: 'Operation Failed'
-        })
-      }
+        } catch (error) {
+            this.setState({
+                msg: 'Operation Failed'
+            })
+        }
 }
 }
 function mapStateToProps(state){

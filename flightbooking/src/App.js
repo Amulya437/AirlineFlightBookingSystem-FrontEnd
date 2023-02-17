@@ -13,6 +13,7 @@ import Executive from "./components/Executive";
 
 import User from "./components/User";
 import { Login } from "./components/auth/login";
+import Flyer from "./components/Flyer";
 
 export default class App extends Component {
   render(){ 
@@ -25,6 +26,7 @@ export default class App extends Component {
         
         <Route path="/" element={ <Login />} /> 
         <Route path="/airline" element={ <Airline/>} />
+        <Route path="/flyer" element={ <Flyer/>} />
         <Route path="/flight" element={ <Flight/>} /> 
         <Route path="/executive" element={ <Executive/>} /> 
         <Route path="/user" element={ <User />} /> 

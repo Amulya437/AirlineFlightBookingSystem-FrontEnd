@@ -2,8 +2,8 @@ import axios from "axios";
 import { Component } from "react";
 import { connect } from "react-redux";
  
-import { login } from "../../store/action/login";
-import Airline from "../Airline";
+ import { login } from "../../store/action/login";
+// import Employee from "../Employee";
  
 
 export class Login extends Component {
@@ -17,7 +17,7 @@ export class Login extends Component {
         },
         errors: {},
         msg: '',
-         redirect: '/airline',
+        // redirect: '/employee',
         isLoggedIn: false
     };
   }
@@ -27,7 +27,7 @@ export class Login extends Component {
   render() {
      
     return (
-    this.state.isLoggedIn?<div ><Airline/></div>  : 
+        // this.state.isLoggedIn?<div ><Employee /></div>  : 
       <div>
         <div className="row">
           <div className="col-sm-3"></div>

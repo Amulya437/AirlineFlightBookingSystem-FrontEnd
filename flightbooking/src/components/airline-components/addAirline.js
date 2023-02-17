@@ -15,8 +15,13 @@ export class AddAirline extends Component {
         };
     }
     componentDidMount() {
+<<<<<<< HEAD
         //fetch all airline: call action        
         //this.props.listAirline();    
+=======
+        //fetch all airline: call action        
+        //this.props.listAirline();    
+>>>>>>> 7e71f45f724a2ad86f2008d74e60782414b906ce
     }
     render() {
         return (
@@ -74,12 +79,20 @@ export class AddAirline extends Component {
         let tempErrors = {}
         let formValid = true;
         if (!code) {
+<<<<<<< HEAD
             //If name is not given        
+=======
+            //If name is not given        
+>>>>>>> 7e71f45f724a2ad86f2008d74e60782414b906ce
             formValid = false;
             tempErrors['code'] = 'Airline code cannot be empty';
         }
         if (!name) {
+<<<<<<< HEAD
             //If name is not given        
+=======
+            //If name is not given        
+>>>>>>> 7e71f45f724a2ad86f2008d74e60782414b906ce
             formValid = false;
             tempErrors['name'] = 'Airline Name cannot be empty';
         }
@@ -98,7 +111,11 @@ export class AddAirline extends Component {
             console.log('API success');
             console.log(data);
             this.setState({
+<<<<<<< HEAD
                 msg: 'Airline added'
+=======
+                msg: "Airline added"
+>>>>>>> 7e71f45f724a2ad86f2008d74e60782414b906ce
             })
             this.props.AddAirline(data);
         } catch (error) {
@@ -113,4 +130,8 @@ function mapStateToProps(state) {
 
     }
 }
+<<<<<<< HEAD
 export default connect(mapStateToProps, { AddAirline })(AddAirline);
+=======
+export default connect(mapStateToProps, { AddAirline })(AddAirline);
+>>>>>>> 7e71f45f724a2ad86f2008d74e60782414b906ce

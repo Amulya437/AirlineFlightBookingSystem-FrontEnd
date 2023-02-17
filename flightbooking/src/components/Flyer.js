@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { AddFlyer } from "./flyer-components/addFlyer";
 import FlyerList from "./flyer-components/flyerList";
 
+
+
 export class Flyer extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,7 @@ export class Flyer extends Component {
 
   componentDidMount() {
     //this.props.FlyerList();
+    //this.props.FlightList();
   }
 
   render() {
@@ -22,17 +25,17 @@ export class Flyer extends Component {
         <div className="row">
           <div className="col-sm-3">
             <ul className="list-group">
-             <li className=" list-group-item"> <button  className="list-group-item employee-sidebar" onClick={()=>{
+             <li className=" list-group-item"> <button  className="list-group-item flyer-sidebar" onClick={()=>{
                  this.setState({componentNum : 1})
                   }} > Show all Flyers </button> </li>
-            <li className="list-group-item"> <button className=" list-group-item employee-sidebar" onClick={()=>(this.setState({componentNum : 2}))}>
+            <li className="list-group-item"> <button className=" list-group-item flyer-sidebar" onClick={()=>(this.setState({componentNum : 2}))}>
                 Add Flyer</button></li>
             </ul>
           </div>
 
           <div className="col-lg-9">
           {this.state.componentNum === 1?
-           <FlyerList />:<AddFlyer />}
+           <FlyerList />:  <AddFlyer />}
           </div>
         </div>
       </div>
@@ -43,7 +46,8 @@ export class Flyer extends Component {
 function mapStateToProps(state) {
   return {
     FlyerList: state.flyer,
-    AddFlyer: state.flyer
+    AddFlyer: state.flyer,
+  
   };
 }
 

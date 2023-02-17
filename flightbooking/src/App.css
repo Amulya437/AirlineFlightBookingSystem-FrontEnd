@@ -37,6 +37,7 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
 
 .Image {}
 
@@ -62,3 +63,5 @@
 #signup .container #signup-row #signup-column #signup-box #signup-form #register-link {
   margin-top: -85px;
 }
+=======
+>>>>>>> 7e71f45f724a2ad86f2008d74e60782414b906ce

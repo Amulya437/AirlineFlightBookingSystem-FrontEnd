@@ -11,7 +11,11 @@ export class Airline extends Component {
         };
     }
     componentDidMount() {
+<<<<<<< HEAD
         //this.props.AirlineList();     
+=======
+        //this.props.AirlineList();     
+>>>>>>> 7e71f45f724a2ad86f2008d74e60782414b906ce
     }
     render() {
         return (

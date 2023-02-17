@@ -25,10 +25,10 @@ export class Flyer extends Component {
         <div className="row">
           <div className="col-sm-3">
             <ul className="list-group">
-             <li className=" list-group-item"> <button  className="list-group-item employee-sidebar" onClick={()=>{
+             <li className=" list-group-item"> <button  className="list-group-item flyer-sidebar" onClick={()=>{
                  this.setState({componentNum : 1})
                   }} > Show all Flyers </button> </li>
-            <li className="list-group-item"> <button className=" list-group-item employee-sidebar" onClick={()=>(this.setState({componentNum : 2}))}>
+            <li className="list-group-item"> <button className=" list-group-item flyer-sidebar" onClick={()=>(this.setState({componentNum : 2}))}>
                 Add Flyer</button></li>
             </ul>
           </div>

@@ -11,7 +11,7 @@ export default class User extends Component{
     }
 
     componentDidMount(){
-         fetch('')
+         fetch('http://localhost:8585/api/user/login')
          .then(response=>response.json())
          .then(data=>{
              this.setState({

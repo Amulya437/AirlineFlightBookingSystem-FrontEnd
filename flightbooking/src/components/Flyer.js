@@ -2,6 +2,8 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import { AddFlyer } from "./flyer-components/addFlyer";
 import FlyerList from "./flyer-components/flyerList";
+import { FlightList } from "../store/action/flight";
+
 
 export class Flyer extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ export class Flyer extends Component {
 
   componentDidMount() {
     //this.props.FlyerList();
+    //this.props.FlightList();
   }
 
   render() {
@@ -32,7 +35,7 @@ export class Flyer extends Component {
 
           <div className="col-lg-9">
           {this.state.componentNum === 1?
-           <FlyerList />:<AddFlyer />}
+           <FlyerList />:  <AddFlyer />}
           </div>
         </div>
       </div>
@@ -43,7 +46,9 @@ export class Flyer extends Component {
 function mapStateToProps(state) {
   return {
     FlyerList: state.flyer,
-    AddFlyer: state.flyer
+    AddFlyer: state.flyer,
+    FlightList:state.flight,
+    flg : state.flight
   };
 }
 

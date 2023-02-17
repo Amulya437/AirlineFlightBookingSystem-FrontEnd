@@ -10,6 +10,8 @@ import Airline from "./components/Airline.js";
 import "./components/app.css";
 import Flight from "./components/Flight";
 import Executive from "./components/Executive";
+import Flyer from "./components/Flyer";
+
 
 
 
@@ -20,10 +22,11 @@ export default class App extends Component {
       <Provider store={store}>
       <NavBar/>
       <Routes>
-        
-        
+
+       
         <Route path="/airline" element={ <Airline/>} />
         <Route path="/flight" element={ <Flight/>} /> 
+        <Route path="/flyer" element={ <Flyer/>} /> 
         <Route path="/executive" element={ <Executive/>} /> 
         
         </Routes>

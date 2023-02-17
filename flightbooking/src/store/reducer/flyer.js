@@ -10,9 +10,6 @@ const flyer = (state =initialState, action)=>{
      if(action.type === 'ADD_FLYER'){
         return {...state,  list : [...state.list, action.payload]}
     }
-    if(action.type === 'GET_FLYER_BY_ID'){
-        return {...state,  list : [...state.list, action.payload]}
-    }
  return state;
 };
 

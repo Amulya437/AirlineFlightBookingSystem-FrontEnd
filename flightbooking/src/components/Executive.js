@@ -1,14 +1,16 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { ExecutiveList } from "../store/action/executive";
-
+import ExecutiveList from "./executive-components/executiveList";
+import { AddExecutive } from "./executive-components/addExecutive";
 export class Executive extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            componentNum: 0
+        };
     }
     componentDidMount() {
-        this.props.ExecutiveList();
+        //this.props.listExecutive();
     }
     render() {
         return (
@@ -16,33 +18,16 @@ export class Executive extends Component {
                 <div className="row">
                     <div className="col-sm-3">
                         <ul className="list-group">
-                            <li className="list-group-item">Show all Executive</li>
-                            <li className="list-group-item">Add Executive</li>
-                            
+                            <li className=" list-group-item">
+                                <button className="list-group-item executive-sidebar" onClick={() => { this.setState({ componentNum: 1 }) }} >
+                                    Show all executors </button> </li>
+                            <li className="list-group-item"> <button className=" list-group-item executor-sidebar" onClick={() => (this.setState({ componentNum: 2 }))}>
+                                Add Executor</button></li>
                         </ul>
                     </div>
                     <div className="col-lg-9">
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">S.No</th>
-                                    <th scope="col">Id</th>
-                                    
-                                    <th scope="col">Executive Name</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    this.props.executiveList.list.map((e, index) => (
-                                        <tr key={e.id}>
-                                            <th scope="row" key={e.id}> {index + 1}</th>
-                                            <td>{e.id}</td>
-                                           
-                                            <td>{e.name}</td>
-                                        </tr>
-                                    ))}
-                            </tbody>
-                        </table>
+                        {this.state.componentNum === 1 ?
+                            <ExecutiveList /> : <AddExecutive />}
                     </div>
                 </div>
             </div>
@@ -51,7 +36,8 @@ export class Executive extends Component {
 };
 function mapStateToProps(state) {
     return {
-        executiveList: state.executive
+        ExecutiveList: state.executive,
+        AddExecutive: state.executive,
     };
 }
 export default connect(mapStateToProps, { ExecutiveList })(Executive);

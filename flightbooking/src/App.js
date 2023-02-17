@@ -10,15 +10,9 @@ import Airline from "./components/Airline.js";
 import "./components/app.css";
 import Flight from "./components/Flight";
 import Executive from "./components/Executive";
-<<<<<<< HEAD
+
 import User from "./components/User";
 import { Login } from "./components/auth/login";
-=======
-import Flyer from "./components/Flyer";
-
-
-
->>>>>>> 05b1ab110ec56f22339528348b71e359269ed798
 
 export default class App extends Component {
   render(){ 
@@ -27,16 +21,11 @@ export default class App extends Component {
       <Provider store={store}>
       <NavBar/>
       <Routes>
-<<<<<<< HEAD
+
         
         <Route path="/" element={ <Login />} /> 
-=======
-
-       
->>>>>>> 05b1ab110ec56f22339528348b71e359269ed798
         <Route path="/airline" element={ <Airline/>} />
         <Route path="/flight" element={ <Flight/>} /> 
-        <Route path="/flyer" element={ <Flyer/>} /> 
         <Route path="/executive" element={ <Executive/>} /> 
         <Route path="/user" element={ <User />} /> 
         <Route path="/sign-up" element={ <SignUp />} /> 

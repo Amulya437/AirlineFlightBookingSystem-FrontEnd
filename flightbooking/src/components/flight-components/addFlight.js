@@ -13,6 +13,7 @@ export class AddFlight extends Component {
                 arrivalCity: '',
                 departureCity: '',
                 departureDate: '',
+                
             },
             errors: {},
             msg: '',

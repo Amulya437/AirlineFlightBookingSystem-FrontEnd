@@ -103,7 +103,7 @@ export class AddAirline extends Component {
             this.props.AddAirline(data);
         } catch (error) {
             this.setState({
-                msg: 'Operation Failed'
+               msg: " "
             })
         }
     }

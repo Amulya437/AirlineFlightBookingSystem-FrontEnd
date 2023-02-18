@@ -152,7 +152,7 @@ export class AddFlight extends Component {
         }
         catch (error) {
             this.setState({
-                msg: 'Operation Failed'
+                msg: ' '
             })
         }
     }

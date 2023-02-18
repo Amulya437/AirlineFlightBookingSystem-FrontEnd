@@ -16,7 +16,7 @@ export class Flyer extends Component {
 
   componentDidMount() {
     //this.props.FlyerList();
-    //this.props.FlightList();
+    
   }
 
   render() {
@@ -28,7 +28,8 @@ export class Flyer extends Component {
              <li className=" list-group-item"> <button  className="list-group-item flyer-sidebar" onClick={()=>{
                  this.setState({componentNum : 1})
                   }} > Show all Flyers </button> </li>
-            <li className="list-group-item"> <button className=" list-group-item flyer-sidebar" onClick={()=>(this.setState({componentNum : 2}))}>
+            <li className="list-group-item"> <button className=" list-group-item flyer-sidebar" 
+            onClick={()=>(this.setState({componentNum : 2}))}>
                 Add Flyer</button></li>
             </ul>
           </div>
@@ -46,7 +47,7 @@ export class Flyer extends Component {
 function mapStateToProps(state) {
   return {
     FlyerList: state.flyer,
-    AddFlyer: state.flyer,
+    
   
   };
 }

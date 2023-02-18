@@ -1,11 +1,22 @@
 import { Component } from "react";
 import { Link, Outlet } from "react-router-dom";
-
+import Login from "./auth/login";
 export default class NavBar extends Component {
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+            isLoggedIn: false
+        };
     }
+    componentDidMount() {
+        let username = localStorage.getItem('username');
+
+        if (username === null || username === undefined)
+            this.setState({ isLoggedIn: false })
+        else
+            this.setState({ isLoggedIn: true })
+    }
+
     render() {
         return (
             <div >
@@ -48,19 +59,21 @@ export default class NavBar extends Component {
                                             Executive
                                         </Link>
                                     </li>
-                                    
+
                                     <li className="nav-item">
                                         <Link className="nav-link" aria-current="page" to="/sign-up">
-                                        <button type="button" className="btn btn-primary">SignUp</button>
+                                            <button type="button" className="btn btn-primary">SignUp</button>
                                         </Link>
                                     </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" aria-current="page" to="/login">
-                                        <button type="button" className="btn btn-primary">Login</button>
-                                        </Link>
-                                    </li>
-                                    
+
                                 </ul>
+                                <div className="col-sm-2">
+                                    {this.state.isLoggedIn ? <Link to="/logout"><button className="btn btn-outline-danger">
+                                        Logout </button>  </Link> : ''
+                                    }
+
+
+                                </div>
                             </div>
                         </div>
                     </nav>

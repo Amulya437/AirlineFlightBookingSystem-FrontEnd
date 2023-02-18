@@ -11,9 +11,12 @@ import Flight from "./components/Flight";
 import Executive from "./components/Executive";
 import { Login } from "./components/auth/login";
 import Flyer from "./components/Flyer";
+import Logout from "./components/auth/logout";
 
 export default class App extends Component {
-  render(){ 
+
+  /* Which function does react call : render() */
+  render(){ /* render must return something(JSX) */
     return(
     <div className="background">
      
@@ -23,6 +26,7 @@ export default class App extends Component {
 
         
         <Route path="/" element={ <Login />} /> 
+        <Route path="/logout" element={ <Logout />} />
         <Route path="/airline" element={ <Airline/>} />
         <Route path="/flyer" element={ <Flyer/>} />
         <Route path="/flight" element={ <Flight/>} /> 

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Component } from "react";
-import { connect } from "react-redux"; 
-import { login } from "../../store/action/login";
+import { connect } from "react-redux";
+ 
+import login from "../../store/reducer/login";
 import Flight from "../Flight";
  
 
@@ -26,7 +27,7 @@ export class Login extends Component {
   render() {
      
     return (
-    this.state.isLoggedIn?<div >< Flight /></div>  : 
+        this.state.isLoggedIn?<div ><Flight /></div>  : 
       <div>
         <div className="row">
           <div className="col-sm-3"></div>
@@ -92,7 +93,7 @@ export class Login extends Component {
         if(this.handleValidation()){
             
             /* Call the API */
-           return this.loginUser(this.state.user);
+            this.loginUser(this.state.user);
         }
         else{
             /* Display error messages */
@@ -126,7 +127,7 @@ export class Login extends Component {
     async loginUser(user){
         let authCode = 'Basic ' + btoa(user.username + ':' + user.password);
         try {
-            const response = axios.get('http://localhost:8585/api/user/login',{
+            const response = axios.get('http://localhost:8585/api/user/login/',{
                 headers: {'Authorization': authCode },
             })
             const data = (await response).data;
@@ -140,7 +141,7 @@ export class Login extends Component {
            } catch (error) {
             console.error(error);
             this.setState({
-                msg: 'Invalid Credentials'
+                msg: ' '
             })
           }
     }

@@ -8,7 +8,6 @@ export class AddExecutive extends Component {
         this.state = {
             executive: {
                 name: '',
-
                 username: '',
                 password: '',
                 role: 'EXECUTIVE'

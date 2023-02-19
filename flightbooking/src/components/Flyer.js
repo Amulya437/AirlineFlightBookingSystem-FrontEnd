@@ -10,7 +10,9 @@ export class Flyer extends Component {
     super(props);
 
     this.state = {
-        componentNum: 0
+      componentNum: 0
+
+
     };
   }
 
@@ -25,18 +27,18 @@ export class Flyer extends Component {
         <div className="row">
           <div className="col-sm-3">
             <ul className="list-group">
-             <li className=" list-group-item"> <button  className="list-group-item flyer-sidebar" onClick={()=>{
-                 this.setState({componentNum : 1})
-                  }} > Show all Flyers </button> </li>
-            <li className="list-group-item"> <button className=" list-group-item flyer-sidebar" 
-            onClick={()=>(this.setState({componentNum : 2}))}>
+              <li className=" list-group-item"> <button className="list-group-item flyer-sidebar" onClick={() => {
+                this.setState({ componentNum: 1 })
+              }} > Show all Flyers </button> </li>
+              <li className="list-group-item"> <button className=" list-group-item flyer-sidebar"
+                onClick={() => (this.setState({ componentNum: 2 }))}>
                 Add Flyer</button></li>
             </ul>
           </div>
 
           <div className="col-lg-9">
-          {this.state.componentNum === 1?
-           <FlyerList />:  <AddFlyer />}
+            {this.state.componentNum === 1 ?
+              <FlyerList /> : <AddFlyer />}
           </div>
         </div>
       </div>
@@ -47,11 +49,11 @@ export class Flyer extends Component {
 function mapStateToProps(state) {
   return {
     FlyerList: state.flyer,
-    
-  
+
+
   };
 }
 
 
 
-export default connect( mapStateToProps, { FlyerList})(Flyer);
+export default connect(mapStateToProps, { FlyerList })(Flyer);

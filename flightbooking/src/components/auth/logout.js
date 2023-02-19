@@ -1,5 +1,5 @@
 import { Component } from "react"
-import Login from "./login";
+import { Login } from "./login";
 
 export default class  Logout extends Component{
 
@@ -17,6 +17,7 @@ export default class  Logout extends Component{
 
     render(){
         return(
+            
             <Login />
         )
     }

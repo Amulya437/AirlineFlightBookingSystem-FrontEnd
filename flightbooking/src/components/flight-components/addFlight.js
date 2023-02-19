@@ -123,22 +123,22 @@ export class AddFlight extends Component {
         let tempErrors = {}
         let formValid = true;
         if (!flightName) {
-            //If name is not given       
+            //If name is not given       
             formValid = false;
             tempErrors['flightName'] = 'Flight Name cannot be empty';
         }
         if (!departureCity) {
-            //If name is not given    
+            //If name is not given    
             formValid = false;
             tempErrors['departureCity'] = 'departureCity cannot be empty';
         }
         if (!arrivalCity) {
-            //If name is not given    
+            //If name is not given    
             formValid = false;
             tempErrors['arrivalCity'] = 'arrivalCity cannot be empty';
         }
         if (!departureDate) {
-            //If name is not given   
+            //If name is not given   
             formValid = false;
             tempErrors['departureDate'] = 'departureDate cannot be empty';
         }

@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import { connect } from "react-redux";
 import { listAirline, addAirline } from '../../store/action/airline';
+import { listExecutive, addExecutive } from "../../store/action/executive";
 
 export class AddFlight extends Component {
     constructor(props) {
@@ -13,10 +14,12 @@ export class AddFlight extends Component {
                 arrivalCity: '',
                 departureCity: '',
                 departureDate: '',
+
             },
             errors: {},
             msg: '',
             airline: [],
+            executive: []
             
         
         };
@@ -72,6 +75,17 @@ export class AddFlight extends Component {
                             </select>
                             <span style={{ color: 'red' }}>{this.state.errors['airlineId']}</span>
                             <br /><br />
+                            <label>Select Executive</label>
+                            <select name="executiveID"
+                                value={this.state.flight.executiveID}
+                                onChange={this.changeHandler} >
+                                <option key={0} value="">--Select Executive--</option>
+                                {this.props.executive1.list.map(a => (
+                                    <option key={a.id} value={a.id}>{a.name}</option>
+                                ))}
+                            </select>
+                            <span style={{ color: 'red' }}>{this.state.errors['executiveId']}</span>
+                            <br /><br />
                             
                             <button onClick={this.onAdd} className="btn btn-primary">Add Flight</button>
                         </p>
@@ -109,22 +123,22 @@ export class AddFlight extends Component {
         let tempErrors = {}
         let formValid = true;
         if (!flightName) {
-            //If name is not given       
+            //If name is not given       
             formValid = false;
             tempErrors['flightName'] = 'Flight Name cannot be empty';
         }
         if (!departureCity) {
-            //If name is not given    
+            //If name is not given    
             formValid = false;
             tempErrors['departureCity'] = 'departureCity cannot be empty';
         }
         if (!arrivalCity) {
-            //If name is not given    
+            //If name is not given    
             formValid = false;
             tempErrors['arrivalCity'] = 'arrivalCity cannot be empty';
         }
         if (!departureDate) {
-            //If name is not given   
+            //If name is not given   
             formValid = false;
             tempErrors['departureDate'] = 'departureDate cannot be empty';
         }
@@ -141,7 +155,7 @@ export class AddFlight extends Component {
             departureDate: f.departureDate
         }
         try {
-            const response = axios.post("http://localhost:8585/api/flight/add/" + f.airlineID , flight1);
+            const response = axios.post("http://localhost:8585/api/flight/add/" +f.airlineID + "/" + f.executiveID ,flight1);
             const data = (await response).data;
             console.log('API success');
             console.log(data);
@@ -152,7 +166,7 @@ export class AddFlight extends Component {
         }
         catch (error) {
             this.setState({
-                msg: 'Operation Failed'
+                msg: ' '
             })
         }
     }
@@ -160,7 +174,8 @@ export class AddFlight extends Component {
 function mapStateToProps(state) {
     return {
         airline: [],
+        executive :[],
         addFlight: state.flight
     }
 }
-export default connect(mapStateToProps, { listAirline, addAirline })(AddFlight);
+export default connect(mapStateToProps, { listAirline, addAirline,listExecutive, addExecutive})(AddFlight);

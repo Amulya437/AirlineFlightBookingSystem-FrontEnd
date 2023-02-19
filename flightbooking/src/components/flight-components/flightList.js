@@ -24,6 +24,7 @@ export class FlightList extends Component {
                         <th scope="col">Airline Id</th>
                         <th scope="col">Departure Date</th>
                         <th scope="col">Executive Id</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,9 @@ export class FlightList extends Component {
                                 <td>{f.airline.id}</td>
                                 <td>{f.departureDate}</td>
                                 <td>{f.executive.id}</td>
+                                
+                            
+
                             </tr>
                         ))
                     }

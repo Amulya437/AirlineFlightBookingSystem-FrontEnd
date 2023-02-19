@@ -11,12 +11,15 @@ export class Flyer extends Component {
 
     this.state = {
         componentNum: 0
+        
+        
     };
   }
 
   componentDidMount() {
     //this.props.FlyerList();
     //this.props.FlightList();
+
   }
 
   render() {

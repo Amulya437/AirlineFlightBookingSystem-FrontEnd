@@ -1,22 +1,12 @@
 import { Component } from "react";
 import { Link, Outlet } from "react-router-dom";
-import Login from "./auth/login";
+import "./Navbar.css"
+
 export default class NavBar extends Component {
     constructor() {
         super();
-        this.state = {
-            isLoggedIn: false
-        };
+        this.state = {};
     }
-    componentDidMount() {
-        let username = localStorage.getItem('username');
-
-        if (username === null || username === undefined)
-            this.setState({ isLoggedIn: false })
-        else
-            this.setState({ isLoggedIn: true })
-    }
-
     render() {
         return (
             <div >
@@ -24,7 +14,7 @@ export default class NavBar extends Component {
                     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
                         <div className="container-fluid">
                             <Link className="navbar-brand" to="/">
-                                FlightApp
+                                <b><h4>FlightApp</h4></b>
                             </Link>
                             <button
                                 className="navbar-toggler"
@@ -59,21 +49,19 @@ export default class NavBar extends Component {
                                             Executive
                                         </Link>
                                     </li>
-
+                                    
                                     <li className="nav-item">
                                         <Link className="nav-link" aria-current="page" to="/sign-up">
-                                            <button type="button" className="btn btn-primary">SignUp</button>
+                                        <button type="button" className="btn btn-primary">SignUp</button>
                                         </Link>
                                     </li>
-
+                                    <li className="nav-item">
+                                        <Link className="nav-link" aria-current="page" to="/login">
+                                        <button type="button" className="btn btn-primary">Login</button>
+                                        </Link>
+                                    </li>
+                                    
                                 </ul>
-                                <div className="col-sm-2">
-                                    {this.state.isLoggedIn ? <Link to="/logout"><button className="btn btn-outline-danger">
-                                        Logout </button>  </Link> : ''
-                                    }
-
-
-                                </div>
                             </div>
                         </div>
                     </nav>

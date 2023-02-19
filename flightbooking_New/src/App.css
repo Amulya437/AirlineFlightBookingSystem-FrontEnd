@@ -32,10 +32,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 
 .Image {}
 
@@ -61,3 +63,4 @@
 #signup .container #signup-row #signup-column #signup-box #signup-form #register-link {
   margin-top: -85px;
 }
+

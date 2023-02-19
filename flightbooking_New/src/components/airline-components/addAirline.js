@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Component } from "react";
 import { connect } from "react-redux";
-import { addAirline } from "../../store/action/airline";
 export class AddAirline extends Component {
     constructor(props) {
         super(props);
@@ -103,7 +102,7 @@ export class AddAirline extends Component {
             this.props.AddAirline(data);
         } catch (error) {
             this.setState({
-               msg: " "
+                msg: ' '
             })
         }
     }
